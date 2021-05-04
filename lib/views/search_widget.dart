@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:rick_and_morty_app/views/char_page.dart';
+import 'package:rick_and_morty_app/views/detail_page.dart';
 import 'package:rick_and_morty_app/extensions/context_extension.dart';
 
 class SearchWidget extends StatelessWidget {
@@ -54,7 +54,7 @@ class SearchWidget extends StatelessWidget {
     );
   }
 
-  IconButton buildSearchIconButton(context) {
+  Widget buildSearchIconButton(context) {
     return IconButton(
         icon: Icon(
           Icons.search,
@@ -62,7 +62,7 @@ class SearchWidget extends StatelessWidget {
           size: 27,
         ),
         onPressed: () {
-          Get.to(() => CharacterPage());
+          Get.to(() => DetailPage());
         });
   }
 }
