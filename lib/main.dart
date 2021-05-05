@@ -20,7 +20,9 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.yellow,
         hintColor: Colors.grey.shade100,
         focusColor: Colors.grey,
-        hoverColor: Colors.blueGrey.shade800,
+        hoverColor: Colors.black,
+        cardColor: Colors.white,
+
         textTheme: TextTheme(
           headline1: TextStyle(
               fontSize: 25,
