@@ -1,10 +1,12 @@
 # rick_and_morty_app
 
-A new Flutter project.
+I'm developing Rick and Morty app using the api.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+My choise will be coming here:
+-GetX for State Management
+-MVC for Design Pattern
 
 A few resources to get you started if this is your first Flutter project:
 
