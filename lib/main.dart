@@ -12,29 +12,38 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Rick and Morty',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: "Abel",
-        // brightness: Brightness.dark,
-        brightness: Brightness.light,
-        accentColor: Colors.teal,
-        primaryColor: Colors.yellow,
-        hintColor: Colors.grey.shade100,
-        focusColor: Colors.grey,
-        hoverColor: Colors.black,
-        cardColor: Colors.white,
-
-        textTheme: TextTheme(
-          headline1: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-              color: Colors.blueGrey.shade800),
-        ),
-        inputDecorationTheme: InputDecorationTheme(
-          border: OutlineInputBorder(),
-          labelStyle: TextStyle(color: Colors.grey, fontSize: 15),
-        ),
-      ),
+      theme: buildThemeData(),
       home: HomePage(),
+    );
+  }
+
+  ThemeData buildThemeData() {
+    return ThemeData(
+      fontFamily: "Abel",
+      brightness: Brightness.light,
+      primaryColor: Colors.yellow.shade700,
+      primaryColorDark: Colors.yellow.shade800,
+      accentColor: Colors.black,
+      hintColor: Colors.grey.shade100,
+      focusColor: Colors.grey,
+      hoverColor: Colors.teal,
+      cardColor: Colors.white,
+      textTheme: buildTextTheme(),
+      inputDecorationTheme: buildInputDecorationTheme(),
+    );
+  }
+
+  TextTheme buildTextTheme() {
+    return TextTheme(
+        headline1: TextStyle(
+            fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black),
+        headline6: TextStyle(fontWeight: FontWeight.bold));
+  }
+
+  InputDecorationTheme buildInputDecorationTheme() {
+    return InputDecorationTheme(
+      border: OutlineInputBorder(),
+      labelStyle: TextStyle(color: Colors.grey, fontSize: 15),
     );
   }
 }

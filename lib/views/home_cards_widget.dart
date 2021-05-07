@@ -15,7 +15,7 @@ class CardWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         buildText(context),
-        buildPadding(),
+        buildPadding(context),
       ],
     );
   }
@@ -27,26 +27,30 @@ class CardWidget extends StatelessWidget {
     );
   }
 
-  Padding buildPadding() {
+  Padding buildPadding(context) {
     return Padding(
       padding: EdgeInsets.fromLTRB(10, 25, 10, 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          CardExtension(
-            titleText: "Characters",
-            cardText: "123",
-            color: Colors.yellow.shade900,
+          AnimatedPositioned(
+            left: 0,
+            duration: Duration(milliseconds: 500),
+            child: CardExtension(
+              titleText: "Characters",
+              cardText: "123",
+              color: Colors.yellow.shade900,
+            ),
           ),
           CardExtension(
             titleText: "Locations",
             cardText: "223",
-            color: Colors.yellow.shade800,
+            color: Theme.of(context).primaryColorDark,
           ),
           CardExtension(
             titleText: "Episodes",
             cardText: "876",
-            color: Colors.yellow.shade700,
+            color: Theme.of(context).primaryColor,
           ),
         ],
       ),

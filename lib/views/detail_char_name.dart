@@ -4,6 +4,10 @@ class CharacterName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Chip(
+      avatar: Icon(
+        Icons.star,
+        color: Theme.of(context).primaryColorDark,
+      ),
       label: Text("Michael Jenkins"),
       elevation: 5,
       labelStyle: Theme.of(context)
@@ -14,4 +18,3 @@ class CharacterName extends StatelessWidget {
     );
   }
 }
-

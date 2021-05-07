@@ -6,9 +6,9 @@ class BottomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: context.dynamicHeight(30),
+      height: context.dynamicHeight(20),
       decoration: BoxDecoration(
-          color: Theme.of(context).cardColor.withOpacity(0.7),
+          color: Theme.of(context).cardColor.withOpacity(0.8),
           borderRadius: BorderRadius.circular(15),
           boxShadow: [
             BoxShadow(

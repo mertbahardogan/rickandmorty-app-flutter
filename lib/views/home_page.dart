@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty_app/extensions/divider_container.dart';
-import 'package:rick_and_morty_app/views/cards_widget.dart';
+import 'package:rick_and_morty_app/views/home_cards_widget.dart';
 import 'package:rick_and_morty_app/views/home_image_widget.dart';
-import 'package:rick_and_morty_app/views/search_widget.dart';
+import 'package:rick_and_morty_app/views/home_search_widget.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -89,14 +90,61 @@ class HomePage extends StatelessWidget {
     return FloatingActionButton(
       child: Icon(
         Icons.settings,
-        color: Theme.of(context).hoverColor,
+        color: Theme.of(context).accentColor
       ),
       backgroundColor: Theme.of(context).hintColor,
       mini: true,
       elevation: 0,
-      onPressed: () {},
+      onPressed: () {
+        showDialog(
+            context: context,
+            barrierDismissible: false,
+            builder: (context) {
+              return AlertDialog(
+                backgroundColor: Theme.of(context).hintColor,
+                title: Center(
+                  child: Text(
+                    "Settings",
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
+                ),
+                content: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text("data"),
+                          Text("data"),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text("data"),
+                          Text("data"),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                actions: [
+                  TextButton(
+                      onPressed: () {
+                        Get.back();
+                      },
+                      child: Text(
+                        "Save",
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText1
+                            .copyWith(color: Theme.of(context).primaryColorDark),
+                      ))
+                ],
+              );
+            });
+      },
     );
   }
 }
-
-

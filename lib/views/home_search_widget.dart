@@ -43,13 +43,18 @@ class SearchWidget extends StatelessWidget {
       flex: 1,
       child: Padding(
         padding: const EdgeInsets.only(right: 10),
-        child: Container(
-            height: height,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
-              color: Theme.of(context).hintColor,
-            ),
-            child: buildSearchIconButton(context)),
+        child: Hero(
+          tag: 1,
+          child: Material(
+            child: Container(
+                height: height,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Theme.of(context).hintColor,
+                ),
+                child: buildSearchIconButton(context)),
+          ),
+        ),
       ),
     );
   }
@@ -58,7 +63,7 @@ class SearchWidget extends StatelessWidget {
     return IconButton(
         icon: Icon(
           Icons.search,
-          color: Theme.of(context).hoverColor,
+          color: Theme.of(context).accentColor,
           size: 27,
         ),
         onPressed: () {

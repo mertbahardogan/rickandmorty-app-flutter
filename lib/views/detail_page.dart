@@ -8,28 +8,31 @@ import 'package:rick_and_morty_app/views/detail_char_name.dart';
 class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Stack(
-          children: [
-            CharacterImage(),
-            Positioned(
-              top: 20,
-              left: 10,
-              child: buildIconContainer(context),
-            ),
-            Positioned(
-              top: 20,
-              right: 10,
-              child: CharacterName(),
-            ),
-            Positioned(
-              left: 15,
-              right: 15,
-              bottom: 20,
-              child: BottomContainer(),
-            ),
-          ],
+    return Hero(
+      tag: 1,
+      child: Scaffold(
+        body: SafeArea(
+          child: Stack(
+            children: [
+              CharacterImage(),
+              Positioned(
+                top: 20,
+                left: 10,
+                child: buildIconContainer(context),
+              ),
+              Positioned(
+                top: 20,
+                right: 10,
+                child: CharacterName(),
+              ),
+              Positioned(
+                left: 15,
+                right: 15,
+                bottom: 20,
+                child: BottomContainer(),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -38,7 +41,7 @@ class DetailPage extends StatelessWidget {
   Container buildIconContainer(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).cardColor.withOpacity(0.5),
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(30),
       ),
       child: buildIconButton(context),
