@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty_app/extensions/context_extension.dart';
 
-
 class BottomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -26,7 +25,6 @@ Column buildBottomContainerColumn(BuildContext context) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
-      buildIconSpecies(context),
       buildTextSpecies(context),
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -37,11 +35,6 @@ Column buildBottomContainerColumn(BuildContext context) {
       )
     ],
   );
-}
-
-Image buildIconSpecies(BuildContext context) {
-  return Image.asset("assets/icons/species.png",
-      width: context.dynamicWidth(9));
 }
 
 Text buildTextSpecies(BuildContext context) {

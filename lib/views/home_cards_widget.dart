@@ -33,15 +33,6 @@ class CardWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          AnimatedPositioned(
-            left: 0,
-            duration: Duration(milliseconds: 500),
-            child: CardExtension(
-              titleText: "Characters",
-              cardText: "123",
-              color: Colors.yellow.shade900,
-            ),
-          ),
           CardExtension(
             titleText: "Locations",
             cardText: "223",
@@ -51,6 +42,11 @@ class CardWidget extends StatelessWidget {
             titleText: "Episodes",
             cardText: "876",
             color: Theme.of(context).primaryColor,
+          ),
+          CardExtension(
+            titleText: "Locations",
+            cardText: "223",
+            color: Theme.of(context).primaryColorDark,
           ),
         ],
       ),
