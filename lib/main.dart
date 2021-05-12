@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rick_and_morty_app/locator/repository_locator.dart';
 import 'package:rick_and_morty_app/views/home_page.dart';
 
 void main() {
+  setupLocator();
   runApp(MyApp());
 }
 

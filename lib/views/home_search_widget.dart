@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rick_and_morty_app/controllers/api_controller.dart';
 import 'package:rick_and_morty_app/views/detail_page.dart';
 import 'package:rick_and_morty_app/extensions/context_extension.dart';
 
 class SearchWidget extends StatelessWidget {
+  var _controller = Get.put(ApiController());
+  final _textController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     double height = context.dynamicHeight(8);
@@ -29,6 +33,7 @@ class SearchWidget extends StatelessWidget {
 
   Widget buildTextField(context) {
     return TextField(
+      controller: _textController,
       cursorColor: Theme.of(context).focusColor,
       decoration: InputDecoration(
         labelText: "Search character",
@@ -67,7 +72,8 @@ class SearchWidget extends StatelessWidget {
           size: 27,
         ),
         onPressed: () {
-          Get.to(() => DetailPage());
+          _controller.callGetMethod(_textController.text);
+          Get.to(() => DetailPage(charName: _textController.text));
         });
   }
 }
