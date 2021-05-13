@@ -5,13 +5,17 @@ I'm developing Rick and Morty app using the Api.
 ## Structures
 
 My choise will be coming here:
+
 -GetX for State Management
+
 -MVC for Design Pattern
 
 ## UI
 
 
-##Targets
+
+## Targets
+
 -Connection control for internet using GetX,
 
 -Manager or Services some time must wait when fetch data,
