@@ -6,9 +6,6 @@ import 'package:rick_and_morty_app/views/detail_char_image.dart';
 import 'package:rick_and_morty_app/views/detail_char_name.dart';
 
 class DetailPage extends StatelessWidget {
-  final String charName;
-  DetailPage({@required this.charName});
-
   @override
   Widget build(BuildContext context) {
     return Hero(
@@ -26,12 +23,12 @@ class DetailPage extends StatelessWidget {
               Positioned(
                 top: 20,
                 right: 10,
-                child: CharacterName(charName),
+                child: CharacterName(),
               ),
               Positioned(
                 left: 15,
                 right: 15,
-                bottom: 20,
+                bottom: 50,
                 child: BottomContainer(),
               ),
             ],
@@ -59,6 +56,7 @@ class DetailPage extends StatelessWidget {
           Icons.arrow_back_ios,
         ),
         onPressed: () {
+          // buildShowDialog(context, "Try error");
           Get.back();
         });
   }

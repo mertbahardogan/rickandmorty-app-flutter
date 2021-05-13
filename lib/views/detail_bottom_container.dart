@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:rick_and_morty_app/controllers/api_controller.dart';
 import 'package:rick_and_morty_app/extensions/context_extension.dart';
+import 'package:get/get.dart';
 
 class BottomContainer extends StatelessWidget {
+  ApiController _controller = Get.find();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,53 +20,44 @@ class BottomContainer extends StatelessWidget {
               blurRadius: 2.0,
             ),
           ]),
-      child: buildBottomContainerColumn(context),
+      child: buildBottomContainerColumn(context, _controller),
     );
   }
 }
 
-Column buildBottomContainerColumn(BuildContext context) {
+Column buildBottomContainerColumn(BuildContext context, _controller) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
-      buildTextSpecies(context),
-      Row(
+      Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          buildColumnLocation(context),
-          buildColumnEpisode(context),
+          buildColumnLocation(context, _controller),
+          // buildColumnEpisode(context, _controller),
         ],
       )
     ],
   );
 }
 
-Text buildTextSpecies(BuildContext context) {
-  return Text(
-    "Alive - Human",
-    style: Theme.of(context)
-        .textTheme
-        .headline5
-        .copyWith(fontWeight: FontWeight.bold),
-  );
-}
-
-Column buildColumnLocation(BuildContext context) {
+Column buildColumnLocation(BuildContext context, _controller) {
   return Column(
     children: [
       Image.asset("assets/icons/location.png", width: context.dynamicWidth(6)),
       Text("Last known location"),
-      Text("Citadel of Ricks", style: Theme.of(context).textTheme.headline6)
+      Obx(() => Text((_controller.apiModels.value.location.name.toString()),
+          style: Theme.of(context).textTheme.headline6))
     ],
   );
 }
 
-Column buildColumnEpisode(BuildContext context) {
-  return Column(
-    children: [
-      Image.asset("assets/icons/episode.png", width: context.dynamicWidth(6)),
-      Text("First seen in"),
-      Text("Never Ricking Morty", style: Theme.of(context).textTheme.headline6)
-    ],
-  );
-}
+// Column buildColumnEpisode(BuildContext context, _controller) {
+//   return Column(
+//     children: [
+//       Image.asset("assets/icons/episode.png", width: context.dynamicWidth(6)),
+//       Text("First seen in"),
+//       Obx(() => Text((_controller.apiModels.value.episode.name.toString()),
+//           style: Theme.of(context).textTheme.headline6))
+//     ],
+//   );
+// }

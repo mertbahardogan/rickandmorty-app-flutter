@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:rick_and_morty_app/controllers/api_controller.dart';
+import 'package:rick_and_morty_app/extensions/context_extension.dart';
 
 class CharacterImage extends StatelessWidget {
+  ApiController _controller = Get.find();
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage("assets/images/home/main2.jpg"),
-            fit: BoxFit.cover),
+    return Obx(
+      () => Container(
+        height: context.dynamicHeight(100),
+        width: context.dynamicWidth(100),
+        decoration: BoxDecoration(
+          color: Colors.green.shade100,
+          image: DecorationImage(
+              image: NetworkImage(_controller.apiModels.value.image),
+              fit: BoxFit.contain),
+        ),
       ),
     );
   }

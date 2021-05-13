@@ -17,17 +17,13 @@ class ApiManager {
         throw TimeoutException("Time out. Please try again.");
       });
       if (response.statusCode != 200) {
-        throw Exception("Data was not getting.");
+        throw Exception("Data could not fetched.");
       }
-      final responseJson = jsonDecode(response.body); 
-      print(response.body);
-      return responseJson[1]; //["value"]
-    } on TimeoutException catch (_) {
-      print("Response time out");
+      final responseJson = jsonDecode(response.body);
+      return responseJson["results"][0]["id"];
     } on Exception catch (_) {
-      print("Error...");
+      throw Exception("Exception occurred.");
     }
-    return null;
   }
 
   Future<RickAndMorty> getChar(int charId) async {
@@ -39,14 +35,12 @@ class ApiManager {
         throw TimeoutException("Time out. Please try again.");
       });
       if (response.statusCode != 200) {
-        // throw Exception("Data was not getting.");
-        print("Data was not getting.");
+        throw Exception("Data could not fetched.");
       }
       final responseJson = jsonDecode(response.body);
       return RickAndMorty.fromJson(responseJson);
-    } on TimeoutException catch (_) {
-      print("Response time out");
+    } on Exception catch (_) {
+      throw Exception("Exception occurred.");
     }
-    return null;
   }
 }

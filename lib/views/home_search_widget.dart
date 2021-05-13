@@ -73,7 +73,7 @@ class SearchWidget extends StatelessWidget {
         ),
         onPressed: () {
           _controller.callGetMethod(_textController.text);
-          Get.to(() => DetailPage(charName: _textController.text));
+          Get.to(() => DetailPage());
         });
   }
 }
