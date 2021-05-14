@@ -4,7 +4,7 @@ import 'package:rick_and_morty_app/extensions/context_extension.dart';
 import 'package:get/get.dart';
 
 class BottomContainer extends StatelessWidget {
-  ApiController _controller = Get.find();
+  final ApiController _controller = Get.find();
 
   @override
   Widget build(BuildContext context) {

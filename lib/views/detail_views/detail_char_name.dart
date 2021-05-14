@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:rick_and_morty_app/controllers/api_controller.dart';
 
 class CharacterName extends StatelessWidget {
-  ApiController _controller = Get.find();
+  final ApiController _controller = Get.find();
 
   @override
   Widget build(BuildContext context) {

@@ -11,18 +11,20 @@ class ApiManager {
   Future<int> getCharId(String charName) async {
     try {
       final searchUrl = Uri.parse(baseUrl + "api/character/?name=" + charName);
+
       final response = await httpClient
           .get(searchUrl)
-          .timeout(Duration(seconds: 20), onTimeout: () {
+          .whenComplete(() => print("DEBUG! Data Id fetched!"))
+          .timeout(Duration(seconds: 5), onTimeout: () {
         throw TimeoutException("Time out. Please try again.");
       });
       if (response.statusCode != 200) {
-        throw Exception("Data could not fetched.");
+        throw Exception("DEBUG! Data could not fetched.");
       }
       final responseJson = jsonDecode(response.body);
       return responseJson["results"][0]["id"];
-    } on Exception catch (_) {
-      throw Exception("Exception occurred.");
+    } on Exception catch (e) {
+      throw Exception("Exception occurred: $e");
     }
   }
 
@@ -31,7 +33,8 @@ class ApiManager {
       final charUrl = Uri.parse(baseUrl + "api/character/" + charId.toString());
       final response = await httpClient
           .get(charUrl)
-          .timeout(Duration(seconds: 20), onTimeout: () {
+          .whenComplete(() => print("DEBUG! Data fetched!"))
+          .timeout(Duration(seconds: 5), onTimeout: () {
         throw TimeoutException("Time out. Please try again.");
       });
       if (response.statusCode != 200) {
@@ -39,8 +42,8 @@ class ApiManager {
       }
       final responseJson = jsonDecode(response.body);
       return RickAndMorty.fromJson(responseJson);
-    } on Exception catch (_) {
-      throw Exception("Exception occurred.");
+    } on Exception catch (e) {
+      throw Exception("Exception occurred: $e");
     }
   }
 }

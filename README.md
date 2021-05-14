@@ -21,20 +21,19 @@ My choise will be coming here:
 
 ## Targets
 
--Connection control for internet using GetX,
-
--Manager or Services some time must wait when fetch data,
+-Obx has an exception(firstly null value),
 
 -OOP for Services, important for the following target, 
-
--Requirements of Home Page (Fetch data to api.),
 
 -Fetch data of Episode to api,
 
 -Use ColorPalette for Detail Page Background Color,
 
--Redesign of Detail Page,
-
 -Do Localization.
 
 -Then Error Management.
+
+
+## Completed Targets
+
+-Connection control for internet using GetX,

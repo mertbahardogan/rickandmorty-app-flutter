@@ -34,18 +34,18 @@ class CardWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           CardExtension(
-            titleText: "Locations",
-            cardText: "223",
+            titleText: "Character",
+            cardText: "671",
             color: Theme.of(context).primaryColorDark,
           ),
           CardExtension(
-            titleText: "Episodes",
-            cardText: "876",
+            titleText: "Locations",
+            cardText: "108",
             color: Theme.of(context).primaryColor,
           ),
           CardExtension(
-            titleText: "Locations",
-            cardText: "223",
+            titleText: "Episodes",
+            cardText: "41",
             color: Theme.of(context).primaryColorDark,
           ),
         ],

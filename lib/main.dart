@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:rick_and_morty_app/locator/repository_locator.dart';
-import 'package:rick_and_morty_app/views/home_page.dart';
+import 'package:rick_and_morty_app/bindings/network_bindings.dart';
+import 'package:rick_and_morty_app/dependencies/repository_dependency.dart';
+import 'package:rick_and_morty_app/views/home_views/home_page.dart';
 
 void main() {
-  setupLocator();
+  setupDependency();
   runApp(MyApp());
 }
 
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: buildThemeData(),
       home: HomePage(),
+      initialBinding: NetworkBindings(),
     );
   }
 

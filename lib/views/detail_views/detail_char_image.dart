@@ -4,9 +4,10 @@ import 'package:rick_and_morty_app/controllers/api_controller.dart';
 import 'package:rick_and_morty_app/extensions/context_extension.dart';
 
 class CharacterImage extends StatelessWidget {
-  ApiController _controller = Get.find();
+  final ApiController _controller = Get.find();
   @override
   Widget build(BuildContext context) {
+    print("HEY " + _controller.apiModels.value.image.toString());
     return Obx(
       () => Container(
         height: context.dynamicHeight(100),

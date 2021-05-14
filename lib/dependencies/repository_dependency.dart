@@ -5,7 +5,7 @@ import 'package:rick_and_morty_app/services/object_manager.dart';
 GetIt getIt = GetIt.instance;
 
 
-void setupLocator(){
+void setupDependency(){
   getIt.registerLazySingleton(() => ApiManager());
 
   getIt.registerLazySingleton(() => ObjectManager());

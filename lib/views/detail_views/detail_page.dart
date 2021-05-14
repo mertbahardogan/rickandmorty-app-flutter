@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rick_and_morty_app/extensions/context_extension.dart';
-import 'package:rick_and_morty_app/views/detail_bottom_container.dart';
-import 'package:rick_and_morty_app/views/detail_char_image.dart';
-import 'package:rick_and_morty_app/views/detail_char_name.dart';
+import 'package:rick_and_morty_app/views/detail_views/detail_bottom_container.dart';
+import 'package:rick_and_morty_app/views/detail_views/detail_char_image.dart';
+import 'package:rick_and_morty_app/views/detail_views/detail_char_name.dart';
 
 class DetailPage extends StatelessWidget {
   @override

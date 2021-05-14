@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rick_and_morty_app/controllers/api_controller.dart';
-import 'package:rick_and_morty_app/views/detail_page.dart';
+import 'package:rick_and_morty_app/views/detail_views/detail_page.dart';
 import 'package:rick_and_morty_app/extensions/context_extension.dart';
 
 class SearchWidget extends StatelessWidget {
-  var _controller = Get.put(ApiController());
+  final _controller = Get.put(ApiController());
   final _textController = TextEditingController();
 
   @override

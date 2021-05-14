@@ -1,5 +1,7 @@
+import 'dart:io';
+
 import 'package:get/get.dart';
-import 'package:rick_and_morty_app/locator/repository_locator.dart';
+import 'package:rick_and_morty_app/dependencies/repository_dependency.dart';
 import 'package:rick_and_morty_app/models/RickAndMorty.dart';
 import 'package:rick_and_morty_app/services/object_manager.dart';
 

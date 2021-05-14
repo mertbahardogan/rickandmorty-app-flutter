@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:rick_and_morty_app/controllers/network_controller.dart';
 import 'package:rick_and_morty_app/extensions/divider_container.dart';
-import 'package:rick_and_morty_app/views/home_cards_widget.dart';
-import 'package:rick_and_morty_app/views/home_image_widget.dart';
-import 'package:rick_and_morty_app/views/home_search_widget.dart';
+import 'package:rick_and_morty_app/views/home_views/home_cards_widget.dart';
+import 'package:rick_and_morty_app/views/home_views/home_image_widget.dart';
+import 'package:rick_and_morty_app/views/home_views/home_search_widget.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
+  final NetworkController _controller = Get.put(NetworkController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: buildColumn(context),
+      body: buildBodyObx(context),
       floatingActionButton: buildFloatingActionButton(context),
     );
+  }
+
+  Obx buildBodyObx(BuildContext context) {
+    return Obx(() => _controller.connectionStatus.value == 0
+        ? Center(child: Text("There is no internet connection."))
+        : buildColumn(context));
   }
 
   Widget buildColumn(BuildContext context) {
@@ -86,12 +94,10 @@ class HomePage extends StatelessWidget {
     );
   }
 
+//FIX THIS
   FloatingActionButton buildFloatingActionButton(context) {
     return FloatingActionButton(
-      child: Icon(
-        Icons.settings,
-        color: Theme.of(context).accentColor
-      ),
+      child: Icon(Icons.settings, color: Theme.of(context).accentColor),
       backgroundColor: Theme.of(context).hintColor,
       mini: true,
       elevation: 0,
@@ -136,10 +142,8 @@ class HomePage extends StatelessWidget {
                       },
                       child: Text(
                         "Save",
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText1
-                            .copyWith(color: Theme.of(context).primaryColorDark),
+                        style: Theme.of(context).textTheme.bodyText1.copyWith(
+                            color: Theme.of(context).primaryColorDark),
                       ))
                 ],
               );
