@@ -2,6 +2,10 @@
 
 I'm developing Rick and Morty app using the Api.
 
+## Technologies
+
+* Flutter 2.0 Null-Safety (with Dart Language)
+
 ## Structures
 
 My choice will be coming here:
@@ -10,7 +14,7 @@ My choice will be coming here:
 
 * MVC for Design Pattern
 
-## Targets
+### Targets
 
 * Obx has an exception(firstly null value),
 
@@ -25,12 +29,12 @@ My choice will be coming here:
 * Then Error Management.
 
 
-## Completed Targets
+### Completed Targets
 
 * Connection control for internet using GetX,
 
 
-### UI
+#### UI
 
 ![WhatsApp Image 2021-05-14 at 02 01 08 (1)](https://user-images.githubusercontent.com/50531805/118198032-cf1f7880-b458-11eb-99e4-bcfa61e78ba3.jpeg)
 
