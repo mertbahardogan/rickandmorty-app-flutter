@@ -2,6 +2,10 @@
 
 I'm developing Rick and Morty app using the Api.
 
+# Table of Contents
+
+*Technologies
+
 ## Technologies
 
 * Flutter 2.0 Null-Safety (with Dart Language)
