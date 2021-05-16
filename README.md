@@ -10,15 +10,6 @@ My choise will be coming here:
 
 -MVC for Design Pattern
 
-## UI
-
-![WhatsApp Image 2021-05-14 at 02 01 08 (1)](https://user-images.githubusercontent.com/50531805/118198032-cf1f7880-b458-11eb-99e4-bcfa61e78ba3.jpeg)
-
-![WhatsApp Image 2021-05-14 at 02 01 08](https://user-images.githubusercontent.com/50531805/118198043-d34b9600-b458-11eb-8822-df38ac6a0774.jpeg)
-
-
-
-
 ## Targets
 
 -Obx has an exception(firstly null value),
@@ -37,3 +28,14 @@ My choise will be coming here:
 ## Completed Targets
 
 -Connection control for internet using GetX,
+
+
+## UI
+
+![WhatsApp Image 2021-05-14 at 02 01 08 (1)](https://user-images.githubusercontent.com/50531805/118198032-cf1f7880-b458-11eb-99e4-bcfa61e78ba3.jpeg)
+
+![WhatsApp Image 2021-05-14 at 02 01 08](https://user-images.githubusercontent.com/50531805/118198043-d34b9600-b458-11eb-8822-df38ac6a0774.jpeg)
+
+
+
+
