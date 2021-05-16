@@ -2,9 +2,6 @@
 
 I'm developing Rick and Morty app using the Api.
 
-# Table of Contents
-
-*Technologies
 
 ## Technologies
 
