@@ -4,33 +4,33 @@ I'm developing Rick and Morty app using the Api.
 
 ## Structures
 
-My choise will be coming here:
+My choice will be coming here:
 
 * GetX for State Management
 
--MVC for Design Pattern
+* MVC for Design Pattern
 
 ## Targets
 
--Obx has an exception(firstly null value),
+* Obx has an exception(firstly null value),
 
--OOP for Services, important for the following target, 
+* OOP for Services, important for the following target, 
 
--Fetch data of Episode to api,
+* Fetch data of Episode to api,
 
--Use ColorPalette for Detail Page Background Color,
+* Use ColorPalette for Detail Page Background Color,
 
--Do Localization.
+* Do Localization.
 
--Then Error Management.
+* Then Error Management.
 
 
 ## Completed Targets
 
--Connection control for internet using GetX,
+* Connection control for internet using GetX,
 
 
-## UI
+### UI
 
 ![WhatsApp Image 2021-05-14 at 02 01 08 (1)](https://user-images.githubusercontent.com/50531805/118198032-cf1f7880-b458-11eb-99e4-bcfa61e78ba3.jpeg)
 
